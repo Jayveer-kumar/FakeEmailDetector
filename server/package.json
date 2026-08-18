@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "email-validator": "^2.0.4",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.6.2",
+    "mongoose": "^8.20.1",
+    "nodemailer": "^9.0.5",
+    "whois-json": "^2.0.4",
+    "zod": "^4.4.3"
+  }
+}
