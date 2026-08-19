@@ -1,4 +1,5 @@
 import dns from "dns";
+dns.setDefaultResultOrder("ipv4first");
 import validator from "email-validator";
 // import disposableList from "./disposableList.json"  assert { type: "json"  };
 // import popularProviderList from "./popularProviderList.json" assert { type: "json" };

@@ -1,4 +1,5 @@
 import dns from "dns";
+dns.setDefaultResultOrder("ipv4first");
 import net from "net";
 
 // Domains that don't allow catch-all detection (always false)
