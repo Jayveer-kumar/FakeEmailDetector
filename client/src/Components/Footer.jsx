@@ -78,11 +78,6 @@ export default function Footer() {
                 </a>
               </li>
             ))}
-            {/* <a  href="#overview" ><li id="overview" className="hover:text-green-400 cursor-pointer transition py-1 ">Overview</li></a>
-            <a href="#product" ><li id="product" className="hover:text-green-400 cursor-pointer transition py-1">Product</li></a>
-            <a href="#our_process" ><li id="our_process" className="hover:text-green-400 cursor-pointer transition py-1">Our Process</li></a>
-            <a href="#pricing"><li id="pricing" className="hover:text-green-400 cursor-pointer transition py-1">Pricing</li></a>
-            <a href="#contact"><li id="contact" className="hover:text-green-400 cursor-pointer transition py-1">Contact</li></a> */}
           </ul>
         </motion.div>
 
@@ -94,10 +89,6 @@ export default function Footer() {
         >
           <h3 className="text-lg font-semibold text-white mb-4">Legal</h3>
           <ul className="space-y-3 text-sm">
-            {/* <li className="hover:text-green-400 cursor-pointer transition">Terms & Conditions</li>
-            <li className="hover:text-green-400 cursor-pointer transition">Privacy Policy</li>
-            <li className="hover:text-green-400 cursor-pointer transition">Refund Policy</li>
-            <li className="hover:text-green-400 cursor-pointer transition">Data Usage</li> */}
             <li> <Link to="/terms"className="hover:text-green-400 cursor-pointer transition"  >Terms & Conditions</Link> </li>
             <li> <Link to="/privacy"className="hover:text-green-400 cursor-pointer transition"  >Privacy Policy</Link> </li>
             <li> <Link to="/refund"className="hover:text-green-400 cursor-pointer transition"  >Refund Policy</Link> </li>

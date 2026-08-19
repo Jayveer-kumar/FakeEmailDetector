@@ -47,10 +47,11 @@ export default function Dashboard() {
     try {
       setIsLoading(true);
       const res = await fetch(
-        "http://localhost:8080/admin/adminRoute/adminPannel?key=jayveer7248060696"
+        "https://fakeemaildetector.onrender.com/admin/adminRoute/adminPannel?key=jayveer7248060696"
       );
 
       const data = await res.json();
+      console.log(data);
       setStats(data);
     } catch (error) {
       console.log("Error fetching admin data:", error);

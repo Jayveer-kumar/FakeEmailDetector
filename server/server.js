@@ -22,6 +22,7 @@ const port = process.env.PORT || 5000;
 // 2. Global Middlewares
 app.use(cors());
 app.use(express.json({ limit: "10kb" }));
+app.set("trust proxy", 1);
 
 // Rate Limiter Config
 const contactLimiter = rateLimit({
