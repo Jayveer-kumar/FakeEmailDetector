@@ -19,6 +19,7 @@
     "express-rate-limit": "^8.6.2",
     "mongoose": "^8.20.1",
     "nodemailer": "^9.0.5",
+    "resend": "^6.20.0",
     "whois-json": "^2.0.4",
     "zod": "^4.4.3"
   }

@@ -13,8 +13,6 @@ import contactRoute from "./routes/contactRoute.js";
 // Middleware Imports
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
-// Mail Transporter
-import { verifyMailTransporter } from "./config/mail.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -40,15 +38,7 @@ const contactLimiter = rateLimit({
 connectDb(); 
 
 // Async wrapper to safely verify mail transporter
-async function initMail() {
-  try {
-    await verifyMailTransporter();
-    console.log("Mail Transporter verified successfully.");
-  } catch (err) {
-    console.error("Some Error Occurred in verifyMailTransporter:", err.message);
-  }
-}
-initMail();
+
 
 // 4. API Routes
 app.use("/user/email", emailRoutes); 

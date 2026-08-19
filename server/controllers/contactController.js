@@ -1,4 +1,4 @@
-import transporter from "../config/mail.js";
+import resend from "../config/mail.js";
 import { contactSchema } from "../validations/contactValidation.js";
 
 export const sendContactEmail = async (req, res, next) => {
@@ -20,40 +20,25 @@ export const sendContactEmail = async (req, res, next) => {
     // 2. Create email
     const mailOptions = {
       from: process.env.MAIL_FROM,
-
       to: process.env.MAIL_TO,
-
-      replyTo: email,
-
+      reply_to: email, // 👈 Resend me "reply_to" (snake_case), replyTo nahi
       subject: `New Contact Message from ${name}`,
-
       text: `Name: ${name} Email: ${email} Message: ${message} `,
-
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
           <h2>New Contact Form Submission</h2>
-
-          <p>
-            <strong>Name:</strong> ${name}
-          </p>
-
-          <p>
-            <strong>Email:</strong> ${email}
-          </p>
-
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
           <hr />
-
-          <p>
-            <strong>Message:</strong>
-          </p>
-
+          <p><strong>Message:</strong></p>
           <p>${message.replace(/\n/g, "<br>")}</p>
         </div>
       `,
     };
 
     // 3. Send email
-    await transporter.sendMail(mailOptions);
+    const { error } = await resend.emails.send(mailOptions);
+    if (error) throw new Error(error.message || "Failed to send email");
 
     // 4. Success response
     return res.status(200).json({
